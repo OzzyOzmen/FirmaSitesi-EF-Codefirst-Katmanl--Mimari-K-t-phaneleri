@@ -49,6 +49,7 @@ namespace FirmaSitesi.Servisler
 
             };
             hizmetlerRepository.Ekle(hizmet);
+            hizmetlerRepository.Context.SaveChanges();
 
         }
 
@@ -79,6 +80,7 @@ namespace FirmaSitesi.Servisler
             hizmet.BuyukResim4 = entity.BuyukResim4;
 
             hizmetlerRepository.Sil(hizmet);
+            hizmetlerRepository.Context.SaveChanges();
         }
     }
 }

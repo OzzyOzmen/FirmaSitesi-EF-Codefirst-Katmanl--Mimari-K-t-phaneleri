@@ -38,6 +38,7 @@ namespace FirmaSitesi.Servisler
                 YaziKategoriAdi=entity.YaziKategoriAdi
             };
             yaziKategoriRepository.Ekle(yaziKategori);
+            yaziKategoriRepository.Context.SaveChanges();
 
         }
 
@@ -54,6 +55,7 @@ namespace FirmaSitesi.Servisler
             var yazikategori = yaziKategoriRepository.GetirListele().Where(r => r.YaziKategoriID == entity.YaziKategoriID).FirstOrDefault();
             yazikategori.YaziKategoriAdi = entity.YaziKategoriAdi;
             yaziKategoriRepository.Sil(yazikategori);
+            yaziKategoriRepository.Context.SaveChanges();
         }
     }
 }

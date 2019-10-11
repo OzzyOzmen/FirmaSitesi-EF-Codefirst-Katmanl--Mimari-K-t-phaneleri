@@ -58,6 +58,7 @@ namespace FirmaSitesi.Servisler
             };
 
             genelAyarlarRepository.Ekle(genelAyarlar);
+            genelAyarlarRepository.Context.SaveChanges();
         }
 
         public void GenelAyarlarGuncelle(GenelAyarlarDTO entity)
@@ -95,6 +96,7 @@ namespace FirmaSitesi.Servisler
             genelayar.SmtpPort = entity.SmptPort;
 
             genelAyarlarRepository.Sil(genelayar);
+            genelAyarlarRepository.Context.SaveChanges();
         }
 
     }

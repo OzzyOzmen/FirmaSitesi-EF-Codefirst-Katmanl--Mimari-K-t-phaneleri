@@ -52,6 +52,7 @@ namespace FirmaSitesi.Servisler
             };
 
             kullanicilarRepository.Ekle(kullanici);
+            kullanicilarRepository.Context.SaveChanges();
         }
 
         public void KullanicilarGuncelle(KullanicilarDTO entity)
@@ -79,6 +80,7 @@ namespace FirmaSitesi.Servisler
             kullanici.Email = entity.Email;
 
             kullanicilarRepository.Sil(kullanici);
+            kullanicilarRepository.Context.SaveChanges();
         }
     }
 }

@@ -41,6 +41,7 @@ namespace FirmaSitesi.Servisler
             };
 
             kullaniciYetkiRepository.Ekle(kullaniciYetki);
+            kullaniciYetkiRepository.Context.SaveChanges();
 
         }
 
@@ -60,6 +61,7 @@ namespace FirmaSitesi.Servisler
             kullaniciYetki.KullaniciYetkisi = entity.KullaniciYetkisi;
 
             kullaniciYetkiRepository.Sil(kullaniciYetki);
+            kullaniciYetkiRepository.Context.SaveChanges();
 
         }
 

@@ -41,6 +41,7 @@ namespace FirmaSitesi.Servisler
             };
 
             galeriKategoriRepository.Ekle(galeriKategori);
+            galeriKategoriRepository.Context.SaveChanges();
 
         }
 
@@ -61,6 +62,7 @@ namespace FirmaSitesi.Servisler
               galeriKategori.GaleriKategoriAdi = entity.GaleriKategoriAdi;
 
             galeriKategoriRepository.Sil(galeriKategori);
+            galeriKategoriRepository.Context.SaveChanges();
         }
 
     }

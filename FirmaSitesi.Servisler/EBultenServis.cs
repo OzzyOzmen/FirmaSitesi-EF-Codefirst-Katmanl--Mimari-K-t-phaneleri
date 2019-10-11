@@ -41,6 +41,7 @@ namespace FirmaSitesi.Servisler
 
             };
             ebultenRepository.Ekle(eBulten);
+            ebultenRepository.Context.SaveChanges();
         }
         public void EbultenGuncelle(EBultenDTO entity)
         {
@@ -58,6 +59,7 @@ namespace FirmaSitesi.Servisler
             Ebulten.EBultenID = entity.EBultenID;
             Ebulten.EmailAdresi = entity.EmailAdresi;
             ebultenRepository.Sil(Ebulten);
+            ebultenRepository.Context.SaveChanges();
         }
 
     }

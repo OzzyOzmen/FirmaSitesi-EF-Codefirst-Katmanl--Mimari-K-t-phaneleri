@@ -42,6 +42,7 @@ namespace FirmaSitesi.Servisler
             };
 
             tedarikcilerRepository.Ekle(tedarikci);
+            tedarikcilerRepository.Context.SaveChanges();
         }
 
         public void TedarikciGuncelle(TedarikcilerDTO entity)
@@ -59,6 +60,7 @@ namespace FirmaSitesi.Servisler
             tedarikci.TedarikciAdi = entity.TedarikciAdi;
 
             tedarikcilerRepository.Sil(tedarikci);
+            tedarikcilerRepository.Context.SaveChanges();
         }
 
     }

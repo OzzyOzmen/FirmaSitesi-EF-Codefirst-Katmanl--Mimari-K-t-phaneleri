@@ -51,6 +51,7 @@ namespace FirmaSitesi.Servisler
             };
 
             urunlerRepository.Ekle(urun);
+            urunlerRepository.Context.SaveChanges();
 
         }
 
@@ -75,6 +76,7 @@ namespace FirmaSitesi.Servisler
             urun.UrunStokAdeti = entity.UrunStokAdeti;
             urun.TedarikciID = entity.TedarikciID;
             urunlerRepository.Sil(urun);
+            urunlerRepository.Context.SaveChanges();
         }
 
     }

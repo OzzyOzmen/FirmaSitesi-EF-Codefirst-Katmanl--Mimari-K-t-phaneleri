@@ -48,6 +48,7 @@ namespace FirmaSitesi.Servisler
             };
 
             referanslarRepository.Ekle(referanslar);
+            referanslarRepository.Context.SaveChanges();
         }
 
         public void ReferanslarGuncelle(ReferanslarDTO entity)
@@ -71,6 +72,7 @@ namespace FirmaSitesi.Servisler
             referans.ReferansLogo = entity.ReferansLogo;
 
             referanslarRepository.Sil(referans);
+            referanslarRepository.Context.SaveChanges();
         }
 
     }

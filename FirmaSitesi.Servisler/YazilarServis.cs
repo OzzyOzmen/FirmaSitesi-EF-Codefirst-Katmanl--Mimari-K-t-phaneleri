@@ -52,6 +52,7 @@ namespace FirmaSitesi.Servisler
                 BuyukResim4 = entity.BuyukResim4
             };
             yazilarRepository.Ekle(yazilar);
+            yazilarRepository.Context.SaveChanges();
         }
 
         public void YazilarGuncelle(YazilarDTO entity)

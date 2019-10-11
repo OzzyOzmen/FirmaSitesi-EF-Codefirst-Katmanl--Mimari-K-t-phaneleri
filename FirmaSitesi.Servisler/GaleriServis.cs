@@ -52,6 +52,7 @@ namespace FirmaSitesi.Servisler
 
             };
             galeriRepository.Ekle(galeri);
+            galeriRepository.Context.SaveChanges();
 
         }
         public void GaleriGuncelle(GaleriDTO entity)
@@ -80,7 +81,8 @@ namespace FirmaSitesi.Servisler
             galeri.BuyukResim4 = entity.BuyukResim4;
 
             galeriRepository.Sil(galeri);
-            
+            galeriRepository.Context.SaveChanges();
+
         } 
         
     }

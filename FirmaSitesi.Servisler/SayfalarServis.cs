@@ -45,6 +45,7 @@ namespace FirmaSitesi.Servisler
             };
 
             sayfalarRepository.Ekle(sayfalar);
+            sayfalarRepository.Context.SaveChanges();
         }
 
         public void SayfaGuncelle(SayfalarDTO entity)
@@ -68,6 +69,7 @@ namespace FirmaSitesi.Servisler
             Sayfa.BuyukResim = entity.BuyukResim;
             Sayfa.SayfaUrl = entity.SayfaUrl;
             sayfalarRepository.Sil(Sayfa);
+            sayfalarRepository.Context.SaveChanges();
 
         }
     }

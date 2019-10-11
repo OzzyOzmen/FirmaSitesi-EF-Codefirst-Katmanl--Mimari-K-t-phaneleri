@@ -47,6 +47,7 @@ namespace FirmaSitesi.Servisler
             };
 
             iletisimRepository.Ekle(iletisim);
+            iletisimRepository.Context.SaveChanges();
         }
 
         public void IletisimGuncelle(IletisimDTO entity)
@@ -70,6 +71,7 @@ namespace FirmaSitesi.Servisler
             iletisim.Okundu = entity.Okundu;
 
             iletisimRepository.Sil(iletisim);
+            iletisimRepository.Context.SaveChanges();
         }
     }
 }

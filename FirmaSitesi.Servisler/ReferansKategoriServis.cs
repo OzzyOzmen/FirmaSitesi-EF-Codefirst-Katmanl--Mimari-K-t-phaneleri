@@ -41,6 +41,7 @@ namespace FirmaSitesi.Servisler
             };
 
             referansKategoriRepository.Ekle(referansKategori);
+            referansKategoriRepository.Context.SaveChanges();
         }
 
         public void ReferansKategoriGuncelle(ReferansKategoriDTO entity)
@@ -58,6 +59,7 @@ namespace FirmaSitesi.Servisler
             referansKategori.ReferansKategoriAdi = entity.ReferansKategoriAdi;
 
             referansKategoriRepository.Sil(referansKategori);
+            referansKategoriRepository.Context.SaveChanges();
         }
 
     }

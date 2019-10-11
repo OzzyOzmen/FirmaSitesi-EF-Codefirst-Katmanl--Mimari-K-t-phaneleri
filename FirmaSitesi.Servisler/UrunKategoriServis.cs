@@ -38,6 +38,7 @@ namespace FirmaSitesi.Servisler
             };
 
             urunKategoriRepository.Ekle(urunKategori);
+            urunKategoriRepository.Context.SaveChanges();
 
         }
 
@@ -54,6 +55,7 @@ namespace FirmaSitesi.Servisler
             var urunkategori = urunKategoriRepository.GetirListele().Where(r => r.UrunKategoriID == entity.UrunKategoriID).FirstOrDefault();
             urunkategori.UrunKategoriAdi = entity.UrunKategoriAdi;
             urunKategoriRepository.Sil(urunkategori);
+            urunKategoriRepository.Context.SaveChanges();
         }
 
     }
