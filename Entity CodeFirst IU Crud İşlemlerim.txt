@@ -2,7 +2,6 @@
 
 
         KullaniciService kullaniciService = new KullaniciService();
-        KullaniciRepository kullaniciRepository = new KullaniciRepository();
 
 
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -33,7 +32,6 @@
                 Parola = txtparola.Text
             };
             kullaniciService.KullaniciEkle(kullanici);
-            kullaniciRepository.DbContext.SaveChanges();
             dataGridView1.DataSource = kullaniciService.KullaniciListele();
             Temizle();
 
@@ -45,7 +43,7 @@
             kullanici.KullaniciAdi = txtkadi.Text;
             kullanici.Parola = txtparola.Text;
 
-            kullaniciRepository.DbContext.SaveChanges();
+            kullaniciService.DbContext.SaveChanges();
             dataGridView1.DataSource = kullaniciService.KullaniciListele();
             Temizle();
 
@@ -57,8 +55,7 @@
             kullanici.KullaniciAdi = txtkadi.Text;
             kullanici.Parola = txtparola.Text;
 
-            kullaniciRepository.Sil(kullanici);
-            kullaniciRepository.DbContext.SaveChanges();
+            kullaniciServis.Sil(kullanici);
             dataGridView1.DataSource = kullaniciService.KullaniciListele();
             Temizle();
 
