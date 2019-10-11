@@ -1,0 +1,256 @@
+1. Sorgu Bloğu
+
+Create Database FirmaSitesi
+
+
+go
+
+------------------------------------
+
+2. Sorgu Bloğu
+
+create table KullaniciYetki
+(
+  KullaniciYetkiID int not null identity(1,1),
+  KullaniciYetki int not null,
+  primary key (KullaniciYetkiID)
+)
+go
+
+create table Kullanici
+(
+  KullaniciID int not null identity(1,1),
+  KullaniciYetkiID int not null,
+  KullaniciAdi nvarchar(50) not null,
+  KullaniciSifre nvarchar(50) not null,
+  AdSoyad nvarchar(50) not null,
+  Telefon char(11) not null,
+  Email nvarchar(50) not null
+  primary key (KullaniciID)
+)
+
+go
+
+Create table Sayfalar
+(
+ SayfaID int not null identity(1,1),
+ SayfaBaslik nvarchar(50) not null,
+ SayfaIcerik nvarchar(50) not null,
+ KucukResim nvarchar(50) not null,
+ BuyukResim nvarchar(50) not null, 
+ SayfaUrl nvarchar(50) not null,
+ primary key (SayfaID)
+
+)
+
+go
+
+
+Create table Hizmetler
+(
+ HizmetID int not null identity(1,1),
+ HizmetBaslik nvarchar(50) not null,
+ HizmetIcerik nvarchar(50) not null,
+ KucukResim nvarchar(50) not null,
+ BuyukResim1 nvarchar(50) not null, 
+ BuyukResim2 nvarchar(50) not null, 
+ BuyukResim3 nvarchar(50) not null, 
+ BuyukResim4 nvarchar(50) not null, 
+ primary key (HizmetID)
+
+)
+
+go
+
+
+Create table ReferansKategori
+(
+ ReferansKategoriID int not null identity(1,1),
+ ReferansKategoriAdi nvarchar(50) not null,
+ primary key (ReferansKategoriID)
+
+)
+
+go
+
+
+Create table Referanslar
+(
+ ReferansID int not null identity(1,1),
+ ReferansKategoriID int not null,
+ ReferansAdi nvarchar(50) not null,
+ ReferansAciklama nvarchar(50) not null,
+ ReferansLogo nvarchar(50) not null,
+ primary key (ReferansID)
+
+)
+
+go
+
+
+Create table GaleriKategori
+(
+ GaleriKategoriID int not null identity(1,1),
+ GaleriKategoriAdi nvarchar(50) not null,
+ primary key (GaleriKategoriID)
+
+)
+
+go
+
+
+Create table Galeri
+(
+ GaleriID int not null identity(1,1),
+ GaleriKategoriID int not null,
+ GaleriAdi nvarchar(50) not null,
+ GaleriLogo nvarchar(50) not null,
+ BuyukResim1 nvarchar(50) not null, 
+ BuyukResim2 nvarchar(50) not null, 
+ BuyukResim3 nvarchar(50) not null, 
+ BuyukResim4 nvarchar(50) not null, 
+ primary key (GaleriID)
+
+)
+
+go
+
+
+Create table YaziKategori
+(
+ YaziKategoriID int not null identity(1,1),
+ YaziKategoridi nvarchar(50) not null,
+ primary key (YaziKategoriID)
+
+)
+
+
+go
+
+Create table Yazilar
+(
+ YazilarID int not null identity(1,1),
+ YaziKategoriID int not null,
+ YazilarBaslik nvarchar(50) not null,
+ YazilarIcerik nvarchar(50) not null,
+ KucukResim nvarchar(50) not null,
+ BuyukResim1 nvarchar(50) not null, 
+ BuyukResim2 nvarchar(50) not null, 
+ BuyukResim3 nvarchar(50) not null, 
+ BuyukResim4 nvarchar(50) not null, 
+ primary key (YazilarID)
+
+)
+
+
+go
+
+Create table Iletisim
+(
+ IletisimID int not null identity(1,1),
+ Gonderen nvarchar(50) not null,
+ IletisimMesaj nvarchar(50) not null,
+ GonderiTarih nvarchar(50) not null,
+ Okundu bit not null,
+ primary key (IletisimID)
+
+)
+
+go
+
+create table UrunKategori
+(
+ UrunKategoriID int not null identity(1,1),
+ UrunKategoriAdi nvarchar(50) not null,
+ primary key(UrunKategoriId)
+
+)
+
+go
+
+create table Urun
+(
+UrunID int not null identity(1,1),
+TedarikciID int not null,
+UrunKategoriID int not null,
+UrunAdi nvarchar(50) not null,
+UrunStokAdeti smallint not null,
+UrunFiyati decimal not null
+primary key(UrunId)
+)
+
+go
+
+create table Tedarikci
+(
+TedarikciID int not null identity(1,1),
+TedarikciAdi nvarchar(50) not null
+primary key(TedarikciID)
+)
+
+
+
+go
+
+Create table EBulten
+(
+ EBultenID int not null identity(1,1),
+ EmailAdresi nvarchar(50) not null,
+ primary key (EBultenID)
+
+)
+
+go
+
+Create table GenelAyarlar
+(
+ GenelAyarID int not null ,
+ WebsiteAdi nvarchar(50) not null,
+ WebsiteAdresi nvarchar(50) not null,
+ AdSoyad nvarchar(50) not null,
+ KullaniciAdi nvarchar(50) not null,
+ KullaniciSifre nvarchar(50) not null,
+ EmailAdresi nvarchar(50) not null,
+ WebsiteEmail nvarchar(50) not null,
+ WebsiteEmailParola nvarchar(50) not null,
+ SmtpAdres nvarchar(50) not null,
+ primary key (GenelAyarID)
+
+)
+
+go
+
+------------------------------------
+
+3. Sorgu Bloğu
+
+
+Create View Tumyazilar
+as
+Select y.YazilarID,yk.YaziKategoriAdi,y.YazilarBaslik,y.YazilarIcerik,y.KucukResim,y.BuyukResim1,y.BuyukResim2,y.BuyukResim3,y.BuyukResim4 from Yazilar y inner join YaziKategori yk on y.YaziKategoriID=yk.YaziKategoriID
+
+go
+
+Create View TumGaleri
+as
+Select g.GaleriID, gk.GaleriKategoriAdi, g.GaleriAdi,g.GaleriLogo,g.BuyukResim1,g.BuyukResim2,g.BuyukResim3,g.BuyukResim4 from Galeri g inner join GaleriKategori gk on g.GaleriID=gk.GaleriKategoriID
+
+go
+
+Create View TumReferanslar
+as
+Select r.ReferansID,rk.ReferansKategoriAdi,r.ReferansAdi,r.ReferansAciklama,r.ReferansLogo from Referanslar r inner join ReferansKategori rk on r.ReferansKategoriID=rk.ReferansKategoriID
+
+go
+
+Create view TumUrunler
+as
+Select u.UrunID,uk.UrunKategoriAdi,u.UrunAdi,u.UrunStokAdeti,u.UrunFiyati,t.TedarikciAdi from Urun u inner join UrunKategori uk on u.UrunKategoriID=uk.UrunKategoriID inner join Tedarikci t on u.TedarikciID=t.TedarikciID
+
+go
+
+create view TumKullanicilar
+as
+select k.KullaniciID,ky.KullaniciYetki,k.KullaniciAdi,k.KullaniciSifre,k.AdSoyad,k.Telefon,k.Email from Kullanici k inner join KullaniciYetki ky on ky.KullaniciYetkiID=k.KullaniciYetkiID
+
+go

@@ -1,0 +1,12 @@
+C:\Users\Ozzy\Documents\Visual Studio 2019\Projects\FirmaSitesi\FirmaSitesi.DTO\bin\Debug\FirmaSitesi.DTO.dll.config
+C:\Users\Ozzy\Documents\Visual Studio 2019\Projects\FirmaSitesi\FirmaSitesi.DTO\bin\Debug\FirmaSitesi.DTO.dll
+C:\Users\Ozzy\Documents\Visual Studio 2019\Projects\FirmaSitesi\FirmaSitesi.DTO\bin\Debug\FirmaSitesi.DTO.pdb
+C:\Users\Ozzy\Documents\Visual Studio 2019\Projects\FirmaSitesi\FirmaSitesi.DTO\bin\Debug\EntityFramework.dll
+C:\Users\Ozzy\Documents\Visual Studio 2019\Projects\FirmaSitesi\FirmaSitesi.DTO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ozzy\Documents\Visual Studio 2019\Projects\FirmaSitesi\FirmaSitesi.DTO\bin\Debug\EntityFramework.xml
+C:\Users\Ozzy\Documents\Visual Studio 2019\Projects\FirmaSitesi\FirmaSitesi.DTO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ozzy\Documents\Visual Studio 2019\Projects\FirmaSitesi\FirmaSitesi.DTO\obj\Debug\FirmaSitesi.DTO.csproj.CoreCompileInputs.cache
+C:\Users\Ozzy\Documents\Visual Studio 2019\Projects\FirmaSitesi\FirmaSitesi.DTO\obj\Debug\FirmaSitesi.DTO.csproj.CopyComplete
+C:\Users\Ozzy\Documents\Visual Studio 2019\Projects\FirmaSitesi\FirmaSitesi.DTO\obj\Debug\FirmaSitesi.DTO.dll
+C:\Users\Ozzy\Documents\Visual Studio 2019\Projects\FirmaSitesi\FirmaSitesi.DTO\obj\Debug\FirmaSitesi.DTO.pdb
+C:\Users\Ozzy\Documents\Visual Studio 2019\Projects\FirmaSitesi\FirmaSitesi.DTO\obj\Debug\FirmaSitesi.DTO.csprojAssemblyReference.cache

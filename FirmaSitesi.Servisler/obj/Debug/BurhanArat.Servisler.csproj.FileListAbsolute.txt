@@ -1,0 +1,2 @@
+C:\Users\Ozzy\Documents\Visual Studio 2019\Projects\FirmaSitesi\FirmaSitesi.Servisler\obj\Debug\FirmaSitesi.Servisler.csprojAssemblyReference.cache
+C:\Users\Ozzy\Documents\Visual Studio 2019\Projects\FirmaSitesi\FirmaSitesi.Servisler\obj\Debug\FirmaSitesi.Servisler.csproj.CoreCompileInputs.cache
