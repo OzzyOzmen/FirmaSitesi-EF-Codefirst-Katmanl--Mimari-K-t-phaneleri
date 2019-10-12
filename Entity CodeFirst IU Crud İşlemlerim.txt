@@ -55,7 +55,8 @@
             kullanici.KullaniciAdi = txtkadi.Text;
             kullanici.Parola = txtparola.Text;
 
-            kullaniciServis.Sil(kullanici);
+           kullaniciService.Sil(kullanici);
+            kullaniciService.DbContext.SaveChanges();
             dataGridView1.DataSource = kullaniciService.KullaniciListele();
             Temizle();
 
