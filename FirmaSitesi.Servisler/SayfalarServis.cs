@@ -3,15 +3,16 @@ using FirmaSitesi.DTO;
 using FirmaSitesi.Repository;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace FirmaSitesi.Servisler
 {
     public class SayfalarServis
     {
-        SayfalarRepository sayfalarRepository ;
+        SayfalarRepository sayfalarRepository;
         public SayfalarServis()
         {
-            if (sayfalarRepository==null)
+            if (sayfalarRepository == null)
             {
                 sayfalarRepository = new SayfalarRepository();
             }
@@ -31,7 +32,7 @@ namespace FirmaSitesi.Servisler
 
             }).ToList();
         }
-
+      
         public void SayfaEkle(SayfalarDTO entity)
         {
             Sayfalar sayfalar = new Sayfalar
@@ -72,6 +73,12 @@ namespace FirmaSitesi.Servisler
             sayfalarRepository.Context.SaveChanges();
 
         }
+
+        public bool SayfaSilbyId(int id)
+        {
+            return sayfalarRepository.SilByPredicate(r => r.SayfaID == id);
+        }
+
     }
- 
+
 }

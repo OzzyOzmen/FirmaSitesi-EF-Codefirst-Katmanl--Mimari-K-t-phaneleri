@@ -65,6 +65,10 @@ namespace FirmaSitesi.Servisler
 
         }
 
+        public bool KullaniciYetkiSilbyId(int id)
+        {
+            return kullaniciYetkiRepository.SilByPredicate(r => r.KullaniciYetkiID == id);
 
+        }
     }
 }

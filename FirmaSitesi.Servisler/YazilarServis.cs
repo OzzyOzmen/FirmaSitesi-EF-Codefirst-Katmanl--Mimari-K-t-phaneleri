@@ -86,6 +86,10 @@ namespace FirmaSitesi.Servisler
             yazilarRepository.Sil(yazi);
             yazilarRepository.Context.SaveChanges();
         }
+        public bool YazilarSilbyId(int id)
+        {
+            return yazilarRepository.SilByPredicate(r => r.YazilarID == id);
+        }
 
     }
 }

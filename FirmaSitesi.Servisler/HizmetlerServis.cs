@@ -82,5 +82,11 @@ namespace FirmaSitesi.Servisler
             hizmetlerRepository.Sil(hizmet);
             hizmetlerRepository.Context.SaveChanges();
         }
+
+        public bool HizmetlerSilbyID(int id)
+        {
+            return hizmetlerRepository.SilByPredicate(r=>r.HizmetID==id);
+
+        }
     }
 }

@@ -82,5 +82,11 @@ namespace FirmaSitesi.Servisler
             kullanicilarRepository.Sil(kullanici);
             kullanicilarRepository.Context.SaveChanges();
         }
+
+        public bool KullanicilarSilbyId(int id)
+        {
+            return kullanicilarRepository.SilByPredicate(r => r.KullaniciID == id);
+
+        }
     }
 }

@@ -31,6 +31,10 @@ namespace FirmaSitesi.Servisler
 
             }).ToList();
         }
+        public bool GaleriKategoriSilbyID(int id)
+        {
+            return galeriKategoriRepository.SilByPredicate(r => r.GaleriKategoriID == id);
+        }
 
         public void GaleriKategoriEkle(GaleriKategoriDTO entity)
         {

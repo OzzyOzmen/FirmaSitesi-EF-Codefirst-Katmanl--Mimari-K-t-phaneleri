@@ -73,5 +73,11 @@ namespace FirmaSitesi.Servisler
             iletisimRepository.Sil(iletisim);
             iletisimRepository.Context.SaveChanges();
         }
+
+        public bool IletisimSilbyID(int id)
+        {
+            return iletisimRepository.SilByPredicate(r=>r.IletisimID==id);
+
+        }
     }
 }

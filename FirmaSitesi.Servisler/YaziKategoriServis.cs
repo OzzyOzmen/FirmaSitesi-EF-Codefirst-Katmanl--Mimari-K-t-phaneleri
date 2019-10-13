@@ -57,5 +57,10 @@ namespace FirmaSitesi.Servisler
             yaziKategoriRepository.Sil(yazikategori);
             yaziKategoriRepository.Context.SaveChanges();
         }
+
+        public bool YaziKategoriSilbyId(int id)
+        {
+            return yaziKategoriRepository.SilByPredicate(r => r.YaziKategoriID == id);
+        }
     }
 }

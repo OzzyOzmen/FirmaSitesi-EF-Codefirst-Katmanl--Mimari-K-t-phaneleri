@@ -63,5 +63,10 @@ namespace FirmaSitesi.Servisler
             tedarikcilerRepository.Context.SaveChanges();
         }
 
+        public bool TedarikciSilbyId(int id)
+        {
+            return tedarikcilerRepository.SilByPredicate(r=>r.TedarikciID==id),
+        }
+
     }
 }

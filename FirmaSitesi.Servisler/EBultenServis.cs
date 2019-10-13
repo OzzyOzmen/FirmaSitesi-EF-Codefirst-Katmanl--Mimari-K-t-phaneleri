@@ -33,6 +33,7 @@ namespace FirmaSitesi.Servisler
             }).ToList();
         }
 
+       
         public void EbultenEkle(EBultenDTO entity)
         {
             EBulten eBulten = new EBulten
@@ -61,6 +62,10 @@ namespace FirmaSitesi.Servisler
             ebultenRepository.Sil(Ebulten);
             ebultenRepository.Context.SaveChanges();
         }
+        public bool EBultenSilbyID(int id)
+        {
+            return ebultenRepository.SilByPredicate(x => x.EBultenID == id);
 
+        }
     }
 }

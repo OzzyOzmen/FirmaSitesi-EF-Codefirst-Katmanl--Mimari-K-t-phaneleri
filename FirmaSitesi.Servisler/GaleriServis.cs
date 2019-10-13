@@ -84,6 +84,12 @@ namespace FirmaSitesi.Servisler
             galeriRepository.Context.SaveChanges();
 
         } 
+
+        public bool GaleriSilbyID(int id)
+        {
+            return galeriRepository.SilByPredicate(r => r.GaleriID == id);
+
+        }
         
     }
 }

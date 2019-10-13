@@ -62,5 +62,10 @@ namespace FirmaSitesi.Servisler
             referansKategoriRepository.Context.SaveChanges();
         }
 
+        public bool ReferansKategoriSilbyID (int id)
+        {
+            return referansKategoriRepository.SilByPredicate(r => r.ReferansKategoriID == id);
+
+        }
     }
 }

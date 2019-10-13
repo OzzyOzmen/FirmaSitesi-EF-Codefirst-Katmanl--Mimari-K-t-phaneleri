@@ -79,5 +79,11 @@ namespace FirmaSitesi.Servisler
             urunlerRepository.Context.SaveChanges();
         }
 
+        public bool UrunSilbyId(int id)
+        {
+            return urunlerRepository.SilByPredicate(r=>r.UrunID==id);
+
+        }
+
     }
 }

@@ -58,5 +58,9 @@ namespace FirmaSitesi.Servisler
             urunKategoriRepository.Context.SaveChanges();
         }
 
+        public bool UrunKategoriSilbyId(int id)
+        {
+            return urunKategoriRepository.SilByPredicate(r => r.UrunKategoriID == id);
+        }
     }
 }

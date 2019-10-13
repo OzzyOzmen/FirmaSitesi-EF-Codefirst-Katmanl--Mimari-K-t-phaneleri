@@ -99,5 +99,9 @@ namespace FirmaSitesi.Servisler
             genelAyarlarRepository.Context.SaveChanges();
         }
 
+        public bool GenelAyarlarSilbyID(int id)
+        {
+            return genelAyarlarRepository.SilByPredicate(r=>r.GenelAyarID==id);
+        }
     }
 }

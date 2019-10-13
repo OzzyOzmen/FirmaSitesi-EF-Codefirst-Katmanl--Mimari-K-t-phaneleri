@@ -75,5 +75,9 @@ namespace FirmaSitesi.Servisler
             referanslarRepository.Context.SaveChanges();
         }
 
+        public bool ReferanslarSilbyId(int id)
+        {
+            return referanslarRepository.SilByPredicate(r => r.ReferansID == id);
+        }
     }
 }
