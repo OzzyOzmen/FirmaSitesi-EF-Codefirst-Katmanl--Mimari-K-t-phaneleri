@@ -65,7 +65,7 @@ namespace FirmaSitesi.Servisler
 
         public bool TedarikciSilbyId(int id)
         {
-            return tedarikcilerRepository.SilByPredicate(r=>r.TedarikciID==id),
+            return tedarikcilerRepository.SilByPredicate(r => r.TedarikciID == id);
         }
 
     }
